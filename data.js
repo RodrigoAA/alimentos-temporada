@@ -119,31 +119,31 @@ const MEAT = {
     'Venado': { months: [9, 10, 11, 0, 1], icon: '🦌' }
 };
 
-// Legumes with their fresh season months and emoji
+// Legumes - dried legumes are available year-round, shown with harvest peak in summer/autumn
 const LEGUMES = {
-    'Alubia blanca': { months: [8, 9, 10], icon: '🫘' },
-    'Alubia roja': { months: [8, 9, 10], icon: '🫘' },
-    'Garbanzo': { months: [5, 6, 7], icon: '🫘' },
-    'Guisante seco': { months: [5, 6, 7], icon: '🟢' },
-    'Haba seca': { months: [5, 6, 7], icon: '🫛' },
-    'Jud\u00eda pinta': { months: [8, 9, 10], icon: '🫘' },
-    'Lenteja': { months: [6, 7, 8], icon: '🫘' },
-    'Lenteja pardina': { months: [6, 7, 8], icon: '🫘' },
-    'Soja': { months: [8, 9, 10], icon: '🫘' }
+    'Alubia blanca': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
+    'Alubia roja': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
+    'Garbanzo': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
+    'Guisante seco': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🟢' },
+    'Haba seca': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫛' },
+    'Judia pinta': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
+    'Lenteja': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
+    'Lenteja pardina': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
+    'Soja': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' }
 };
 
-// Cereals with their harvest season months and emoji
+// Cereals - dried cereals are available year-round
 const CEREALS = {
-    'Arroz': { months: [8, 9, 10], icon: '🍚' },
-    'Avena': { months: [5, 6, 7], icon: '🌾' },
-    'Centeno': { months: [6, 7, 8], icon: '🌾' },
-    'Cebada': { months: [5, 6, 7], icon: '🌾' },
-    'Espelta': { months: [6, 7, 8], icon: '🌾' },
-    'Maiz': { months: [8, 9, 10], icon: '🌽' },
-    'Mijo': { months: [8, 9, 10], icon: '🌾' },
-    'Quinoa': { months: [8, 9, 10], icon: '🌾' },
-    'Trigo': { months: [5, 6, 7], icon: '🌾' },
-    'Trigo sarraceno': { months: [8, 9, 10], icon: '🌾' }
+    'Arroz': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🍚' },
+    'Avena': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
+    'Centeno': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
+    'Cebada': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
+    'Espelta': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
+    'Maiz': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌽' },
+    'Mijo': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
+    'Quinoa': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
+    'Trigo': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
+    'Trigo sarraceno': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' }
 };
 
 // Get foods by their phase in a given month
