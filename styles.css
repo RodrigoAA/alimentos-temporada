@@ -1,0 +1,446 @@
+/* Variables */
+:root {
+    --color-cream: #FDF8F3;
+    --color-sand: #E8DED5;
+    --color-earth: #8B7355;
+    --color-bark: #5C4033;
+    --color-leaf: #4A7C59;
+    --color-leaf-light: #6B9B7A;
+    --color-leaf-dark: #3D6A4A;
+    --color-orange: #E07B39;
+    --color-orange-light: #F4A460;
+
+    /* Phase colors */
+    --color-starting: #5B9A6F;
+    --color-starting-bg: #E8F5E9;
+    --color-peak: #E07B39;
+    --color-peak-bg: #FFF3E0;
+    --color-ending: #9575CD;
+    --color-ending-bg: #EDE7F6;
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+
+    --shadow-soft: 0 2px 8px rgba(92, 64, 51, 0.08);
+    --shadow-medium: 0 4px 16px rgba(92, 64, 51, 0.12);
+    --shadow-lifted: 0 8px 32px rgba(92, 64, 51, 0.16);
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 32px;
+
+    --transition-fast: 150ms ease;
+    --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-cream);
+    color: var(--color-bark);
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent text selection on interactive elements */
+button, .food-item {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--color-leaf) 0%, var(--color-leaf-light) 100%);
+    padding: 1.5rem 1.5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__background {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image:
+        radial-gradient(circle at 20% 80%, white 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, white 0%, transparent 40%),
+        radial-gradient(circle at 40% 40%, white 0%, transparent 30%);
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero__label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.hero__month {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero__stats {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+@media (max-width: 500px) {
+    .hero__stats {
+        gap: 1rem;
+    }
+}
+
+.hero__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+}
+
+.hero__stat--main {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+.hero__stat-number {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+}
+
+.hero__stat-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+}
+
+/* Main */
+.main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+/* Results Section */
+.results-section {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Food Type Section */
+.food-type {
+    margin-bottom: 2.5rem;
+}
+
+.food-type__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid;
+}
+
+.food-type__title--fruits {
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+}
+
+.food-type__title--vegetables {
+    border-color: var(--color-leaf);
+    color: var(--color-leaf);
+}
+
+.food-type__title--fish {
+    border-color: #2E86AB;
+    color: #2E86AB;
+}
+
+.food-type__title--meat {
+    border-color: #A23B72;
+    color: #A23B72;
+}
+
+.food-type__title--legumes {
+    border-color: #8B4513;
+    color: #8B4513;
+}
+
+.food-type__title--cereals {
+    border-color: #DAA520;
+    color: #DAA520;
+}
+
+/* Phase Grid */
+.phase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 700px) {
+    .phase-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Phase Cards */
+.phase-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-soft);
+    border-top: 4px solid;
+    min-height: 180px;
+}
+
+.phase-card--starting { border-color: var(--color-starting); }
+.phase-card--peak { border-color: var(--color-peak); }
+.phase-card--ending { border-color: var(--color-ending); }
+
+.phase-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.phase-card__icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.phase-card--starting .phase-card__icon { color: var(--color-starting); }
+.phase-card--peak .phase-card__icon { color: var(--color-peak); }
+.phase-card--ending .phase-card__icon { color: var(--color-ending); }
+
+.phase-card__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.phase-card--starting .phase-card__title { color: var(--color-starting); }
+.phase-card--peak .phase-card__title { color: var(--color-peak); }
+.phase-card--ending .phase-card__title { color: var(--color-ending); }
+
+.phase-card__description {
+    font-size: 0.8rem;
+    color: var(--color-earth);
+    margin-bottom: 1rem;
+}
+
+/* Food List */
+.food-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.food-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--color-cream);
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    cursor: default;
+}
+
+.food-item:hover {
+    transform: scale(1.05);
+}
+
+.food-item__icon {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.food-item__name {
+    line-height: 1.2;
+}
+
+.phase-card--starting .food-item {
+    background: var(--color-starting-bg);
+    color: var(--color-starting);
+}
+
+.phase-card--peak .food-item {
+    background: var(--color-peak-bg);
+    color: #BF5F1F;
+}
+
+.phase-card--ending .food-item {
+    background: var(--color-ending-bg);
+    color: #7E57C2;
+}
+
+/* Empty State */
+.food-list--empty {
+    color: var(--color-earth);
+    font-style: italic;
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: var(--color-earth);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--color-sand);
+}
+
+/* ===================
+   MOBILE OPTIMIZATIONS
+   =================== */
+
+/* Better touch targets */
+@media (max-width: 600px) {
+    /* Hero adjustments */
+    .hero {
+        padding: 1rem 1rem 1.5rem;
+    }
+
+    .hero__label {
+        font-size: 0.8rem;
+    }
+
+    .hero__stats {
+        gap: 0.5rem;
+    }
+
+    .hero__stat {
+        padding: 0.75rem 1rem;
+        min-width: 80px;
+    }
+
+    .hero__stat--main {
+        transform: scale(1.05);
+    }
+
+    .hero__stat-number {
+        font-size: 1.5rem;
+    }
+
+    .hero__stat-label {
+        font-size: 0.65rem;
+    }
+
+    /* Main content */
+    .main {
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    /* Phase cards */
+    .phase-card {
+        padding: 1rem;
+        min-height: auto;
+    }
+
+    .phase-card__title {
+        font-size: 1rem;
+    }
+
+    /* Food items - bigger touch targets */
+    .food-item {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.9rem;
+    }
+
+    .food-item__icon {
+        font-size: 1.15rem;
+    }
+
+    /* Food type title */
+    .food-type__title {
+        font-size: 1.25rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+    .hero__month {
+        font-size: 2rem;
+    }
+
+    .hero__stat {
+        padding: 0.6rem 0.75rem;
+        min-width: 70px;
+    }
+
+    .hero__stat-number {
+        font-size: 1.3rem;
+    }
+}
+
+/* Remove hover effects on touch devices */
+@media (hover: none) {
+    .food-item:hover {
+        transform: none;
+    }
+}
+
+/* Safe area for notched phones */
+@supports (padding: max(0px)) {
+    .hero {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    .main {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    .footer {
+        padding-bottom: max(2rem, env(safe-area-inset-bottom));
+    }
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#4A7C59">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Alimentos de Temporada | Espana</title>
+    <meta name="description" content="Descubre que frutas y verduras estan de temporada cada mes en Espana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section - Current Month -->
+    <header class="hero" id="hero">
+        <div class="hero__background"></div>
+        <div class="hero__content">
+            <p class="hero__label">Ahora en temporada</p>
+            <h1 class="hero__month" id="heroMonth">Enero</h1>
+            <div class="hero__stats" id="heroStats">
+                <div class="hero__stat">
+                    <span class="hero__stat-number" id="statStarting">0</span>
+                    <span class="hero__stat-label">empiezan</span>
+                </div>
+                <div class="hero__stat hero__stat--main">
+                    <span class="hero__stat-number" id="statPeak">0</span>
+                    <span class="hero__stat-label">en temporada</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number" id="statEnding">0</span>
+                    <span class="hero__stat-label">terminan</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Food Results -->
+        <section class="results-section" id="results">
+
+            <!-- Fruits Section -->
+            <div class="food-type">
+                <h3 class="food-type__title food-type__title--fruits">Frutas</h3>
+                <div class="phase-grid">
+                    <div class="phase-card phase-card--starting">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8599;</span>
+                            <h4 class="phase-card__title">Empieza</h4>
+                        </div>
+                        <p class="phase-card__description">Comienza su temporada</p>
+                        <ul class="food-list" id="fruitsStarting"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--peak">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#9679;</span>
+                            <h4 class="phase-card__title">Ahora</h4>
+                        </div>
+                        <p class="phase-card__description">En plena temporada</p>
+                        <ul class="food-list" id="fruitsPeak"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--ending">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8600;</span>
+                            <h4 class="phase-card__title">Termina</h4>
+                        </div>
+                        <p class="phase-card__description">Ultimos del año</p>
+                        <ul class="food-list" id="fruitsEnding"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vegetables Section -->
+            <div class="food-type">
+                <h3 class="food-type__title food-type__title--vegetables">Verduras</h3>
+                <div class="phase-grid">
+                    <div class="phase-card phase-card--starting">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8599;</span>
+                            <h4 class="phase-card__title">Empieza</h4>
+                        </div>
+                        <p class="phase-card__description">Comienza su temporada</p>
+                        <ul class="food-list" id="vegetablesStarting"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--peak">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#9679;</span>
+                            <h4 class="phase-card__title">Ahora</h4>
+                        </div>
+                        <p class="phase-card__description">En plena temporada</p>
+                        <ul class="food-list" id="vegetablesPeak"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--ending">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8600;</span>
+                            <h4 class="phase-card__title">Termina</h4>
+                        </div>
+                        <p class="phase-card__description">Ultimos del año</p>
+                        <ul class="food-list" id="vegetablesEnding"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fish Section -->
+            <div class="food-type">
+                <h3 class="food-type__title food-type__title--fish">Pescados y Mariscos</h3>
+                <div class="phase-grid">
+                    <div class="phase-card phase-card--starting">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8599;</span>
+                            <h4 class="phase-card__title">Empieza</h4>
+                        </div>
+                        <p class="phase-card__description">Comienza su temporada</p>
+                        <ul class="food-list" id="fishStarting"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--peak">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#9679;</span>
+                            <h4 class="phase-card__title">Ahora</h4>
+                        </div>
+                        <p class="phase-card__description">En plena temporada</p>
+                        <ul class="food-list" id="fishPeak"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--ending">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8600;</span>
+                            <h4 class="phase-card__title">Termina</h4>
+                        </div>
+                        <p class="phase-card__description">Ultimos del año</p>
+                        <ul class="food-list" id="fishEnding"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meat Section -->
+            <div class="food-type">
+                <h3 class="food-type__title food-type__title--meat">Carnes y Caza</h3>
+                <div class="phase-grid">
+                    <div class="phase-card phase-card--starting">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8599;</span>
+                            <h4 class="phase-card__title">Empieza</h4>
+                        </div>
+                        <p class="phase-card__description">Comienza su temporada</p>
+                        <ul class="food-list" id="meatStarting"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--peak">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#9679;</span>
+                            <h4 class="phase-card__title">Ahora</h4>
+                        </div>
+                        <p class="phase-card__description">En plena temporada</p>
+                        <ul class="food-list" id="meatPeak"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--ending">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8600;</span>
+                            <h4 class="phase-card__title">Termina</h4>
+                        </div>
+                        <p class="phase-card__description">Ultimos del año</p>
+                        <ul class="food-list" id="meatEnding"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legumes Section -->
+            <div class="food-type">
+                <h3 class="food-type__title food-type__title--legumes">Legumbres</h3>
+                <div class="phase-grid">
+                    <div class="phase-card phase-card--starting">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8599;</span>
+                            <h4 class="phase-card__title">Empieza</h4>
+                        </div>
+                        <p class="phase-card__description">Comienza su cosecha</p>
+                        <ul class="food-list" id="legumesStarting"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--peak">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#9679;</span>
+                            <h4 class="phase-card__title">Ahora</h4>
+                        </div>
+                        <p class="phase-card__description">En plena cosecha</p>
+                        <ul class="food-list" id="legumesPeak"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--ending">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8600;</span>
+                            <h4 class="phase-card__title">Termina</h4>
+                        </div>
+                        <p class="phase-card__description">Ultimas del año</p>
+                        <ul class="food-list" id="legumesEnding"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cereals Section -->
+            <div class="food-type">
+                <h3 class="food-type__title food-type__title--cereals">Cereales</h3>
+                <div class="phase-grid">
+                    <div class="phase-card phase-card--starting">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8599;</span>
+                            <h4 class="phase-card__title">Empieza</h4>
+                        </div>
+                        <p class="phase-card__description">Comienza su cosecha</p>
+                        <ul class="food-list" id="cerealsStarting"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--peak">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#9679;</span>
+                            <h4 class="phase-card__title">Ahora</h4>
+                        </div>
+                        <p class="phase-card__description">En plena cosecha</p>
+                        <ul class="food-list" id="cerealsPeak"></ul>
+                    </div>
+
+                    <div class="phase-card phase-card--ending">
+                        <div class="phase-card__header">
+                            <span class="phase-card__icon">&#8600;</span>
+                            <h4 class="phase-card__title">Termina</h4>
+                        </div>
+                        <p class="phase-card__description">Ultimos del año</p>
+                        <ul class="food-list" id="cerealsEnding"></ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Datos basados en la produccion agricola y pesquera de Espana</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
