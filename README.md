@@ -1,11 +1,14 @@
 # Alimentos de Temporada
 
-Web para consultar que frutas y verduras estan de temporada en Espana, facilitando una compra mas sostenible y economica.
+Web para consultar que alimentos estan de temporada en España, facilitando una compra mas sostenible y economica.
+
+**Demo:** https://alimentos-temporada.vercel.app
 
 ## Caracteristicas
 
-- Calendario visual interactivo con los 12 meses
-- Informacion de frutas y verduras de temporada en Espana
+- Muestra los alimentos de temporada del mes actual
+- 6 categorias: frutas, verduras, pescados y mariscos, carnes y caza, legumbres y cereales
+- Indica si cada alimento empieza, esta en plena temporada o termina
 - Diseno responsive para movil y escritorio
 - Sin dependencias externas
 
@@ -23,22 +26,20 @@ Web para consultar que frutas y verduras estan de temporada en Espana, facilitan
 ├── styles.css      # Estilos
 ├── app.js          # Logica de la aplicacion
 ├── data.js         # Datos de alimentos por temporada
+├── favicon.svg     # Icono del sitio
 └── README.md       # Documentacion
 ```
 
 ## Como usar
 
-1. Abrir `index.html` en el navegador
-2. Seleccionar un mes en el calendario
-3. Ver los alimentos de temporada para ese mes
+1. Abrir la web o `index.html` en el navegador
+2. Ver los alimentos de temporada del mes actual organizados por categoria
 
 ## Despliegue
 
-Puede desplegarse en cualquier hosting estatico:
-- GitHub Pages
-- Netlify
-- Vercel
-- Cualquier servidor web
+El proyecto esta desplegado en Vercel con deploy automatico desde GitHub.
+
+Repositorio: https://github.com/RodrigoAA/alimentos-temporada
 
 ## Licencia
 
