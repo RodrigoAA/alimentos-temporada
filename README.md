@@ -7,7 +7,7 @@ Web para consultar que alimentos estan de temporada en España, facilitando una 
 ## Caracteristicas
 
 - Muestra los alimentos de temporada del mes actual
-- 6 categorias: frutas, verduras, pescados y mariscos, carnes y caza, legumbres y cereales
+- 4 categorias: frutas, verduras, pescados y mariscos, carnes y caza
 - Indica si cada alimento empieza, esta en plena temporada o termina
 - Diseno responsive para movil y escritorio
 - Sin dependencias externas

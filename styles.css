@@ -202,16 +202,6 @@ button, .food-item {
     color: #A23B72;
 }
 
-.food-type__title--legumes {
-    border-color: #8B4513;
-    color: #8B4513;
-}
-
-.food-type__title--cereals {
-    border-color: #DAA520;
-    color: #DAA520;
-}
-
 /* Phase Grid */
 .phase-grid {
     display: grid;

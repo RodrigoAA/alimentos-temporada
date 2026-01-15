@@ -119,42 +119,13 @@ const MEAT = {
     'Venado': { months: [9, 10, 11, 0, 1], icon: '🦌' }
 };
 
-// Legumes - dried legumes are available year-round, shown with harvest peak in summer/autumn
-const LEGUMES = {
-    'Alubia blanca': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
-    'Alubia roja': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
-    'Garbanzo': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
-    'Guisante seco': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🟢' },
-    'Haba seca': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫛' },
-    'Judia pinta': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
-    'Lenteja': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
-    'Lenteja pardina': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' },
-    'Soja': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🫘' }
-};
-
-// Cereals - dried cereals are available year-round
-const CEREALS = {
-    'Arroz': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🍚' },
-    'Avena': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
-    'Centeno': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
-    'Cebada': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
-    'Espelta': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
-    'Maiz': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌽' },
-    'Mijo': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
-    'Quinoa': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
-    'Trigo': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' },
-    'Trigo sarraceno': { months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], icon: '🌾' }
-};
-
 // Get foods by their phase in a given month
 function getFoodsByPhase(month) {
     const result = {
         fruits: { starting: [], peak: [], ending: [] },
         vegetables: { starting: [], peak: [], ending: [] },
         fish: { starting: [], peak: [], ending: [] },
-        meat: { starting: [], peak: [], ending: [] },
-        legumes: { starting: [], peak: [], ending: [] },
-        cereals: { starting: [], peak: [], ending: [] }
+        meat: { starting: [], peak: [], ending: [] }
     };
 
     const prevMonth = (month - 1 + 12) % 12;
@@ -184,11 +155,9 @@ function getFoodsByPhase(month) {
     processCategory(VEGETABLES, 'vegetables');
     processCategory(FISH, 'fish');
     processCategory(MEAT, 'meat');
-    processCategory(LEGUMES, 'legumes');
-    processCategory(CEREALS, 'cereals');
 
     // Sort alphabetically
-    for (const type of ['fruits', 'vegetables', 'fish', 'meat', 'legumes', 'cereals']) {
+    for (const type of ['fruits', 'vegetables', 'fish', 'meat']) {
         for (const phase of ['starting', 'peak', 'ending']) {
             result[type][phase].sort((a, b) => a.name.localeCompare(b.name, 'es'));
         }
@@ -397,7 +366,7 @@ function getSeasonalRecipes(month, limit = 4) {
     const seasonalFoods = new Set();
 
     // Include all food categories
-    const allCategories = [FRUITS, VEGETABLES, FISH, MEAT, LEGUMES, CEREALS];
+    const allCategories = [FRUITS, VEGETABLES, FISH, MEAT];
 
     for (const category of allCategories) {
         for (const [name, data] of Object.entries(category)) {

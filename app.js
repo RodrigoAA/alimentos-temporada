@@ -17,12 +17,6 @@ const fishEndingEl = document.getElementById('fishEnding');
 const meatStartingEl = document.getElementById('meatStarting');
 const meatPeakEl = document.getElementById('meatPeak');
 const meatEndingEl = document.getElementById('meatEnding');
-const legumesStartingEl = document.getElementById('legumesStarting');
-const legumesPeakEl = document.getElementById('legumesPeak');
-const legumesEndingEl = document.getElementById('legumesEnding');
-const cerealsStartingEl = document.getElementById('cerealsStarting');
-const cerealsPeakEl = document.getElementById('cerealsPeak');
-const cerealsEndingEl = document.getElementById('cerealsEnding');
 
 // Current month
 const currentMonth = new Date().getMonth();
@@ -40,7 +34,7 @@ function renderCurrentMonth() {
     heroMonthEl.textContent = MONTHS[currentMonth].name;
 
     // Calculate totals for all categories
-    const categories = ['fruits', 'vegetables', 'fish', 'meat', 'legumes', 'cereals'];
+    const categories = ['fruits', 'vegetables', 'fish', 'meat'];
 
     let totalStarting = 0;
     let totalPeak = 0;
@@ -73,14 +67,6 @@ function renderCurrentMonth() {
     renderFoodList(meatStartingEl, foods.meat.starting);
     renderFoodList(meatPeakEl, foods.meat.peak);
     renderFoodList(meatEndingEl, foods.meat.ending);
-
-    renderFoodList(legumesStartingEl, foods.legumes.starting);
-    renderFoodList(legumesPeakEl, foods.legumes.peak);
-    renderFoodList(legumesEndingEl, foods.legumes.ending);
-
-    renderFoodList(cerealsStartingEl, foods.cereals.starting);
-    renderFoodList(cerealsPeakEl, foods.cereals.peak);
-    renderFoodList(cerealsEndingEl, foods.cereals.ending);
 }
 
 // Render a food list
